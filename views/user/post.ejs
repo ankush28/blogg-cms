@@ -1,28 +1,72 @@
-<%- include("header") -%>
-<main>
-    <section class="container">
-        <div class="site-content">
-            <div class="container">
-              <div class="row">
-                <div class="posts">
-                      <div class="post-content">
-                          <div class="post-image">
-                              <div class="postimg">
-                                  <img src="<%= newLists.image %>" class="img" alt="blog1">
-                              </div>
-                          </div>
-                          <hr>
-                          <div  class="post-title">
-                              <h1 style="padding-left:20px; margin-top:0;"><%= newLists.title %> </h1>
-                              <hr>
-                              <p><%= newLists.content %>
-                              </p>
-                          </div>
+<!DOCTYPE html>
+<html>
 
-                      </div>
-                    </div>
-                </div>
-              </div>
-      </section>
-    </main>
-<%- include("footer") -%>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
+    <title>Home - Brand</title>
+    <link rel="stylesheet" href="/static/user/assets/bootstrap/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lora:400,700,400italic,700italic">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Aclonica&amp;display=swap">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Alef&amp;display=swap">
+    <link rel="stylesheet" href="/static/user/assets/fonts/font-awesome.min.css">
+    <link rel="stylesheet" href="/static/user/assets/css/Contact-Form-Clean.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.5.2/animate.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css">
+    <link rel="stylesheet" href="/static/user/assets/css/Material-Card.css">
+    <link rel="stylesheet" href="/static/user/assets/css/Newsletter-Subscription-Form.css">
+</head>
+
+<body>
+    <nav class="navbar navbar-light navbar-expand-lg fixed-top" id="mainNav" style="background: var(--bs-purple);">
+        <div class="container"><a class="navbar-brand" href="/">Blog CMS</a><button data-bs-toggle="collapse" data-bs-target="#navbarResponsive" class="navbar-toggler" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation"><i class="fa fa-bars"></i></button>
+            <div class="collapse navbar-collapse" id="navbarResponsive">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item"><a class="nav-link" href="/">Home</a></li>
+                    <li class="nav-item"><a class="nav-link" href="/about">About us</a></li>
+                    <li class="nav-item"><a class="nav-link" href="/contact">Contact us</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+<header class="masthead" style="margin-top: 67px;"></header>
+<article>
+    <div class="container" style="border-bottom: 1px solid rgb(78,79,81) ;">
+        <div class="row">
+            <div class="col-md-10 col-lg-8 mx-auto" style="margin-top: 37px;"><img data-bss-hover-animate="pulse" class="postimg" src="<%= newLists.image %>" style="padding: 0px;padding-right: 0px;padding-left: 127px;"></div>
+            <div class="col-md-10 col-lg-8 mx-auto">
+                <h1 style="filter: hue-rotate(0deg);"><%= newLists.title %></h1>
+            </div>
+        </div>
+    </div>
+    <div class="container">
+        <div class="row">
+            <div class="col-md-10 col-lg-8 mx-auto">
+                <p><%= newLists.content %></p>
+            </div>
+        </div>
+    </div>
+</article>
+<footer>
+    <div class="container">
+        <div class="row">
+            <div class="col-md-10 col-lg-8 mx-auto">
+                <ul class="list-inline text-center">
+                    <li class="list-inline-item"><span class="fa-stack fa-lg"><i class="fa fa-circle fa-stack-2x"></i><i class="fa fa-twitter fa-stack-1x fa-inverse"></i></span></li>
+                    <li class="list-inline-item"><span class="fa-stack fa-lg"><i class="fa fa-circle fa-stack-2x"></i><i class="fa fa-facebook fa-stack-1x fa-inverse"></i></span></li>
+                    <li class="list-inline-item"><span class="fa-stack fa-lg"><i class="fa fa-circle fa-stack-2x"></i><i class="fa fa-github fa-stack-1x fa-inverse"></i></span></li>
+                </ul>
+                <p class="text-muted copyright">Copyright&nbsp;©&nbsp;Brand 2021</p>
+            </div>
+        </div>
+    </div>
+</footer>
+<script src="/static/user/assets/bootstrap/js/bootstrap.min.js"></script>
+<script src="/static/user/assets/js/bs-init.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
+<script src="/static/user/assets/js/clean-blog.js"></script>
+</body>
+
+</html>

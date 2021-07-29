@@ -1,47 +1,43 @@
 <%- include("header") -%>
-    <main>
-        <section class="site-title">
-            <div class="site-background" data-aos="fade-up" data-aos-delay="100">
-                <h1>Blog Website</h1>
-                <button onclick="window.location.href='#mycontent';" class="btn">Explore</button>
-            </div>
-        </section>
-        <section class="container">
-            <div class="site-content">
-                <div id="mycontent" class="posts">
-                    <% newLists.forEach(function (article) { %>
-                        <div class="post-content" data-aos="zoom-in" data-aos-delay="200">
-                            <div class="post-image">
-                                <div class="divimage">
-                                    <img src="<%= article.image %>" class="img homeimg" alt="blog1">
-                                </div>
-
-                            </div>
-                            <div class="post-title">
-                                <a href="#">
-                                    <%= article.title %>
-                                </a>
-                                <p>
-                                    <%= article.content.substring(0, 100) + " ..." %>
-                                </p>
-                                <a href="posts/<%= article._id %>" class="read btn post-btn">Read More &nbsp; <i class="fas fa-arrow-right"></i></a>
-                            </div>
-                        </div>
-                        <hr>
-                        <% }) %>
+<header class="masthead" style="background: var(--bs-purple);opacity: 1;filter: blur(0px);">
+    <div class="overlay" style="background: var(--bs-purple);"></div>
+    <div class="container">
+        <div class="row">
+            <div class="col-md-10 col-lg-8 mx-auto position-relative">
+                <div class="site-heading">
+                    <h1>Clean Blog</h1><span class="subheading">A CMS Blog</span>
                 </div>
-                <aside class="sidebar">
-                    <div class="newsletter" data-aos="fade-up" data-aos-delay="300">
-                        <h2>Newsletter</h2>
-                        <div class="form-element">
-                            <input type="text" class="input-element" placeholder="Email">
-                            <a href="#"><button class="btn form-btn">Subscribe</button></a>
-                        </div>
-                    </div>
-                </aside>
             </div>
-        </section>
-    </main>
-
-
-    <%- include("footer") -%>
+        </div>
+    </div>
+</header>
+    <div class="container">
+        <div class="row">
+            <div class="col-md-10 col-lg-8">
+              <% newLists.forEach(function (article) { %>
+                <div class="card">
+                    <div class="card-body" style="box-shadow: 0px 0px 20px;"><img data-bss-hover-animate="pulse" style="width: 100%;" src="<%= article.image %>">
+                        <h4 class="card-title" style="margin-top: 10px;"><%= article.title %></h4>
+                        <p class="card-text"><%= article.content.substring(0, 100) + " ..." %></p><a href="posts/<%= article._id %>"><button class="btn btn-primary" type="button">READ MORE</button></a>
+                    </div>
+                </div>
+                <hr>
+              <% }) %>
+            </div>
+            <div class="col" data-aos="fade-up">
+                <section class="newsletter-subscribe">
+                    <div class="container">
+                        <div class="intro">
+                            <h2 class="text-center">Subscribe for our Newsletter</h2>
+                            <p class="text-center">Nunc luctus in metus eget fringilla. Aliquam sed justo ligula. Vestibulum nibh erat, pellentesque ut laoreet vitae. </p>
+                        </div>
+                        <form class="d-flex justify-content-center flex-wrap" method="post">
+                            <div class="mb-3"><input class="form-control" type="email" name="email" placeholder="Your Email"></div>
+                            <div class="mb-3"><button class="btn btn-primary" type="submit">Subscribe </button></div>
+                        </form>
+                    </div>
+                </section>
+            </div>
+        </div>
+    </div>
+<%- include("footer") -%>

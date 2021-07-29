@@ -1,26 +1,11 @@
 <%- include("header") -%>
-    <div class="container ankush">
-        <form id="contact" action="" method="post">
-            <h3 style="text-align:center;">Contact</h3>
-            <fieldset>
-                <input placeholder="Your name" name="name" type="text" tabindex="1" required autofocus>
-            </fieldset>
-            <fieldset>
-                <input placeholder="Your Email Address" name="email" type="email" tabindex="2" required>
-            </fieldset>
-            <fieldset>
-                <textarea placeholder="Type your message here...." name="message" tabindex="5" required></textarea>
-            </fieldset>
-            <fieldset>
-                <button  onclick="myfunction()" class="btn">Submit</button>
-            </fieldset>
-        </form>
-    </div>
-    <script>
-      function myfunction(){
-        alert("Thank you")
-        window.location.href="/";
-      }
-    </script>
-
-    <%- include("footer") -%>
+<section class="contact-clean" style="border-top-style: none;">
+    <form id="contact" action="" method="post">
+        <h2 class="text-center">Contact us</h2>
+        <div class="mb-3"> <input class="form-control" type="text" name="name" placeholder="Name"></div>
+        <div class="mb-3"> <input class="form-control" type="email" name="email" placeholder="Email" style="border-radius: 0;border-bottom-color: rgb(255,255,255);"></div>
+        <div class="mb-3"> <textarea class="form-control" name="message" placeholder="Message" rows="14"></textarea></div>
+        <div class="mb-3"> <button class="btn btn-primary" type="submit">send </button></div>
+    </form>
+</section>
+<%- include("footer") -%>

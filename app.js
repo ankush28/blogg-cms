@@ -6,6 +6,7 @@ var ObjectId = require("mongodb").ObjectId;
 var session = require("express-session");
 const http = require("http").createServer(app);
 var io = require("socket.io")(http);
+const  compression = require("compression");
 app.use(session({
   key: "admin",
   secret: "any random string"
@@ -90,7 +91,7 @@ app.get("/admin", function(req, res){
   res.render("admin/login");
 })
 
-
+app.use(compression())
 app.get("/admin", function(req, res){
   res.render("admin/login");
 })
@@ -120,6 +121,7 @@ app.post("/contact", function(req, res){
     message: contactmessage
   });
   contact.save();
+  res.redirect("/home");
 
 })
 
@@ -175,6 +177,11 @@ app.post("/do-admin-login", function(req, res){
   })
 })
 
-http.listen(3000, function(){
-  console.log("connected");
-});
+let port = process.env.PORT;
+if (port ==null || port == ""){
+  port = 3000;
+}
+
+app.listen(port, function(){
+  console.log("server started");
+})

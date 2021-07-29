@@ -1,0 +1,28 @@
+<%- include("header") -%>
+<main>
+    <section class="container">
+        <div class="site-content">
+            <div class="container">
+              <div class="row">
+                <div class="posts">
+                      <div class="post-content">
+                          <div class="post-image">
+                              <div class="postimg">
+                                  <img src="<%= newLists.image %>" class="img" alt="blog1">
+                              </div>
+                          </div>
+                          <hr>
+                          <div  class="post-title">
+                              <h1 style="padding-left:20px; margin-top:0;"><%= newLists.title %> </h1>
+                              <hr>
+                              <p><%= newLists.content %>
+                              </p>
+                          </div>
+
+                      </div>
+                    </div>
+                </div>
+              </div>
+      </section>
+    </main>
+<%- include("footer") -%>

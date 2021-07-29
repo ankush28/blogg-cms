@@ -1,0 +1,40 @@
+<%- include("header") -%>
+<div class="container-fluid">
+  <form onsubmit="return doEditPost(this);" method="post">
+    <div class="form-group">
+      <label>Title</label>
+      <input type="text" name="title" class="form-control" placeholder="Title" value="<%= article.title %>" />
+    </div>
+    <div class="form-group">
+      <label>Image URL</label>
+      <input type="text" name="image" class="form-control" placeholder="Image-url" value="<%= article.image %>" />
+    </div>
+    <div class="form-group">
+      <label>Content</label>
+      <textarea type="text" name="content" rows="15" class="form-control" placeholder="Content"><%= article.content %> </textarea>
+    </div>
+    <input type="submit" class="btn btn-primary btn-lg btn-block" value="Update" />
+  </form>
+</div>
+<script>
+  function doEditPost(form){
+    alert("Posted");
+    // var postId = '<%= article._id %>'
+    // var formData = {
+    //   title: form.title.value,
+    //   content: form.content.value,
+    //   _id: postId
+    // };
+    // $ajax({
+    //   url: "/do-edit-post",
+    //   method : "POST",
+    //   data: formData,
+    //   success: function(response){
+    //     alert(response);
+    //   }
+    // });
+    // return false;
+  }
+
+</script>
+<%- include("footer") -%>

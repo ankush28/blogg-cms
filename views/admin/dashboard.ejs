@@ -1,0 +1,32 @@
+<%- include("header") -%>
+
+<div class="container-fluid" style="overflow-x:auto;">
+  <table class="table">
+    <tr>
+      <th>Title</th>
+      <th>Content</th>
+      <th>Action</th>
+      <th>      </th>
+    </tr>
+    <% newLists.forEach(function (article) { %>
+      <tr>
+        <td style="width: 300px"><%= article.title %></td>
+        <td style="width: 500px"><%= article.content.substring(0, 50) + "..." %></td>
+        <td style="width: 200px">
+          <form action="/posts/<%= article._id %>?newMethod=DELETE" method="post" >
+            <button class="btn btn-warning" onclick="myfunction()" type="submit">Delete</button>
+          </form>
+        </td>
+        <td style="width: 200px"><a class=" btn btn-info" href="/posts/edit/<%= article._id %>">Edit</a></td>
+      </tr>
+    <% }) %>
+  </table>
+</div>
+<script>
+  function myfunction(){
+    alert("Deleted");
+  }
+</script>
+
+
+<%- include("footer") -%>

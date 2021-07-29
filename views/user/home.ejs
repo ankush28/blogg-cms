@@ -1,0 +1,47 @@
+<%- include("header") -%>
+    <main>
+        <section class="site-title">
+            <div class="site-background" data-aos="fade-up" data-aos-delay="100">
+                <h1>Blog Website</h1>
+                <button onclick="window.location.href='#mycontent';" class="btn">Explore</button>
+            </div>
+        </section>
+        <section class="container">
+            <div class="site-content">
+                <div id="mycontent" class="posts">
+                    <% newLists.forEach(function (article) { %>
+                        <div class="post-content" data-aos="zoom-in" data-aos-delay="200">
+                            <div class="post-image">
+                                <div class="divimage">
+                                    <img src="<%= article.image %>" class="img homeimg" alt="blog1">
+                                </div>
+
+                            </div>
+                            <div class="post-title">
+                                <a href="#">
+                                    <%= article.title %>
+                                </a>
+                                <p>
+                                    <%= article.content.substring(0, 100) + " ..." %>
+                                </p>
+                                <a href="posts/<%= article._id %>" class="read btn post-btn">Read More &nbsp; <i class="fas fa-arrow-right"></i></a>
+                            </div>
+                        </div>
+                        <hr>
+                        <% }) %>
+                </div>
+                <aside class="sidebar">
+                    <div class="newsletter" data-aos="fade-up" data-aos-delay="300">
+                        <h2>Newsletter</h2>
+                        <div class="form-element">
+                            <input type="text" class="input-element" placeholder="Email">
+                            <a href="#"><button class="btn form-btn">Subscribe</button></a>
+                        </div>
+                    </div>
+                </aside>
+            </div>
+        </section>
+    </main>
+
+
+    <%- include("footer") -%>

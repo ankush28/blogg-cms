@@ -1,0 +1,23 @@
+<%- include("header") -%>
+
+<div class="container-fluid" style="overflow-x:auto;">
+  <table class="table">
+    <tr>
+      <th>Name</th>
+      <th>Email</th>
+      <th>Message</th>
+      <th> </th>
+    </tr>
+    <% newcontact.forEach(function (contact) { %>
+      <tr>
+        <td style="width: 300px"><%= contact.name %></td>
+        <td style="width: 500px"><%= contact.email %></td>
+        <td style="width: 500px"><%= contact.message %></td>
+        <td><a href="mailto:<%= contact.email %>"><button type="submit" class="btn btn-info" name="button">Reply</button></a></td>
+      </tr>
+    <% }) %>
+  </table>
+</div>
+
+
+<%- include("footer") -%>

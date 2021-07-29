@@ -121,7 +121,7 @@ app.post("/contact", function(req, res){
     message: contactmessage
   });
   contact.save();
-  res.redirect("user/home");
+  res.redirect("/");
 })
 
 app.get("/do-logout", function(req, res){
